@@ -1,0 +1,65 @@
+{
+  "ascii": [
+    "████████╗██████╗ ██╗   ██╗███████╗██╗   ██╗██╗███████╗██╗ ██████╗ ███╗   ██╗",
+    "╚══██╔══╝██╔══██╗██║   ██║██╔════╝██║   ██║██║██╔════╝██║██╔═══██╗████╗  ██║",
+    "   ██║   ██║██  ║██║   ██║███████╗██║   ██║██║███████╗██║██║   ██║██╔██╗ ██║",
+    "   ██║   ██║  ██║██║   ██║██╔════╝██║   ██║██║╚════██║██║██║   ██║██║╚██╗██║",
+    "   ██║   ██║  ██╝╚██████╔╝███████║╚██████╔╝██║███████║██║╚██████╔╝██║ ╚████║",
+    "   ╚═╝   ╚═════╝  ╚═════╝ ╚══════╝ ╚═════╝ ╚═╝╚══════╝╚═╝ ╚═════╝ ╚═╝  ╚═══╝"
+  ],
+  "title": "truevision",
+  "username": "gpcssi",
+  "hostname": "truevision",
+  "password": "CIJRS",
+  "social": [
+    {
+      "email": "shubhamjangrartk@gmail.com",
+      "github": "typical-techno",
+      "linkedin": "shubhamjangradev"
+    },
+    {
+      "email": "juikalan21@gmail.com",
+      "github": "juikalan21",
+      "linkedin": "juikalan"
+    },
+    {
+      "email": "ishann@test.com",
+      "github": "ishaanagarwal78",
+      "linkedin": "ishaanagarwal78"
+    },
+    {
+      "email": "sumnit@test.com",
+      "github": "sumnit",
+      "linkedin": "sumnit"
+    },
+    {
+      "email": "chirag@test.com",
+      "github": "chirag",
+      "linkedin": "chirag"
+    }
+  ],
+  "aboutGreeting": "Hi stranger. Welcome to truevision.",
+  "colors": {
+    "background": "#0C0623",
+    "foreground": "#F8DDE5",
+    "banner": "#FF9951",
+    "border": {
+      "visible": true,
+      "color": "#FFADE2"
+    },
+    "prompt": {
+      "default": "#A5A7A7",
+      "user": "#FE6BC9",
+      "host": "#70FDFF",
+      "input": "#FF7685"
+    },
+    "link": {
+      "text": "#B6AAEE",
+      "highlightColor": "#FFADE2",
+      "highlightText": "#0C0623"
+    },
+    "commands": {
+      "textColor": "#FD9BDB"
+    }
+  }
+}
