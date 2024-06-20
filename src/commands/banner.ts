@@ -2,21 +2,24 @@ import command from '../../config.json' assert {type: 'json'};
 
 const createBanner = () : string[] => {
   const banner : string[] = [];
-  banner.push("<br>")
+  banner.push("<br>");
+
   command.ascii.forEach((ele) => {
-    let bannerString = "";
-    //this is for the ascii art
+    let asciiLine = "";
+    // this is for the ascii art
     for (let i = 0; i < ele.length; i++) {
       if (ele[i] === " ") {
-        bannerString += "&nbsp;";
+        asciiLine += "&nbsp;";
       } else {
-        bannerString += ele[i];
+        asciiLine += ele[i];
       }
     }
-    
-    let eleToPush = `<pre>${bannerString}</pre>`;
-    banner.push(eleToPush);
-  });  
+
+    // Wrap the ASCII line in the marquee structure
+    let asciiMarquee = `<div class="marquee"><span><pre>${asciiLine}</pre></span></div>`;
+    banner.push(asciiMarquee);
+  });
+
   banner.push("<br>");
   banner.push("Welcome to truevision v1.0.0");
   banner.push("Type <span class='command'>'help'</span> for a list of all available commands.");

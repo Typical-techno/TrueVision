@@ -1,23 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;300;400;600&family=Pixelify+Sans&family=VT323&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;300;400;600&family=Pixelify+Sans&family=VT323&display=swap");
 
 :root {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: "IBM Plex Mono", monospace;
   font-weight: 200;
-  --bg: #0C0623;
-  --border: #FFADE2;
-  --text: #F8DDE5;
-  --prompt-default: #A5A7A7;
-  --prompt-1: #FE6BC9;
-  --prompt-2: #70FDFF;
+  --bg: #0c0623;
+  --border: #ffade2;
+  --text: #f8dde5;
+  --prompt-default: #a5a7a7;
+  --prompt-1: #fe6bc9;
+  --prompt-2: #70fdff;
 }
 
 @keyframes typing {
   from {
-    width: 0
+    width: 0;
   }
 
   to {
-    width: 100%
+    width: 100%;
   }
 }
 
@@ -56,11 +56,12 @@ main::-webkit-scrollbar {
 }
 
 p {
-  display: block;
+  display: flex;
   line-height: 22px;
   animation: typing 0.5s steps(30, end);
   white-space: nowrap;
   overflow: hidden;
+  align-items: center;
 }
 
 div {
@@ -69,32 +70,32 @@ div {
 
 @font-face {
   font-family: ascii;
-  src: url("./font/IBMPlexMono-Thin.ttf")
+  src: url("./font/IBMPlexMono-Thin.ttf");
 }
 
 pre {
   margin: 0;
   padding: 0;
   line-height: 20px !important;
-  color: #FF9951;
+  color: #ff9951;
   font-family: "ascii", monospace;
 }
 
 input {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: "IBM Plex Mono", monospace;
   padding: 0px;
   margin: 0px;
   border: none;
   resize: none;
   outline: none;
   font-size: 16px;
-  color: #FF7685;
+  color: #ff7685;
   caret-color: var(--prompt-default);
   width: 50%;
 }
 
 a {
-  color: #B6AAEE;
+  color: #b6aaee;
 }
 
 a:hover {
@@ -103,7 +104,7 @@ a:hover {
 }
 
 #bars {
-  font-family: 'Pixelify Sans', sans-serif;
+  font-family: "Pixelify Sans", sans-serif;
   font-size: 20px;
   position: -webkit-sticky;
   position: sticky;
@@ -138,7 +139,6 @@ a:hover {
   margin-top: 3px;
 }
 
-
 #bar-5 {
   height: 1px;
   background-color: var(--border);
@@ -156,10 +156,8 @@ a:hover {
 }
 
 .command {
-  text-shadow:
-    0 0 7px #fff,
-    0 0 151px var(--border);
-  color: #FD9BDB;
+  text-shadow: 0 0 7px #fff, 0 0 151px var(--border);
+  color: #fd9bdb;
 }
 
 .output {
@@ -167,7 +165,7 @@ a:hover {
 }
 
 .keys {
-  color: #FF9951;
+  color: #ff9951;
   font-weight: 400;
 }
 
@@ -205,5 +203,38 @@ a:hover {
 
   #input-line {
     margin-left: 8px;
+  }
+}
+.marquee-pre {
+  white-space: nowrap;
+  display: inline-block;
+}
+
+/* Marquee effect for mobile devices */
+@media (max-width: 768px) {
+  /* Add this to your CSS file */
+  .marquee {
+    width: 100%; /* Set the desired width */
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+  }
+
+  .marquee span {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee 10s linear infinite; /* Adjust duration as needed */
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(-10%);
+    }
+    50% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(-10%);
+    }
   }
 }
