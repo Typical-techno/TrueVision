@@ -4,6 +4,7 @@ const createAbout = () => {
   const about = [];
   const SPACE = "&nbsp;";
 
+  const WORK = 'Work';
   const EMAIL = "Email";
   const GITHUB = "Github";
   const LINKEDIN = "Linkedin";
@@ -13,6 +14,7 @@ const createAbout = () => {
   about.push("<br>");
 
   command.social.forEach(member => {
+    let work = `<i class='fa-solid fa-briefcase'></i> ${WORK}`;   
     let email = `<i class='fa-solid fa-envelope'></i> ${EMAIL}`;   
     let github = `<i class='fa-brands fa-github'></i> ${GITHUB}`;
     let linkedin = `<i class='fa-brands fa-linkedin'></i> ${LINKEDIN}`;
@@ -36,6 +38,14 @@ const createAbout = () => {
     string += linkedin;
     string += SPACE.repeat(17 - LINKEDIN.length);  
     string += `<a target='_blank' href='https://www.linkedin.com/in/${member.linkedin}'>linkedin/${member.linkedin}</a>`;
+    about.push(string);
+
+    // Adding Work field
+    string = '';
+    string += SPACE.repeat(2);
+    string += work;
+    string += SPACE.repeat(17 - WORK.length);  
+    string += `${member.work}`;
     about.push(string);
 
     about.push("<br>");

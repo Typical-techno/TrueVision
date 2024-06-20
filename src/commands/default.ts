@@ -3,6 +3,7 @@ const createDefault = () : string[] => {
     "<br>",
     "COMMAND NOT FOUND",
     "Type <span class='command'>'help'</span> to get started.",
+    "Type <span class='command'>'file'</span> to get started with deepfake detection.",
     "<br>"
   ]  
   

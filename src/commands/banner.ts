@@ -20,6 +20,7 @@ const createBanner = () : string[] => {
   banner.push("<br>");
   banner.push("Welcome to truevision v1.0.0");
   banner.push("Type <span class='command'>'help'</span> for a list of all available commands.");
+  banner.push("Type <span class='command'>'file'</span> to get started with deepfake detection.");
   banner.push("<br>");
   return banner;
 }
