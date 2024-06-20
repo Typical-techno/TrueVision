@@ -1,7 +1,7 @@
 const helpObj = {
   "commands": [
     [
-      "'File'",
+      "'file'",
       "Upload Files for Detection of Deepfake."
     ],
     [
