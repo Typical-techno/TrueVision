@@ -14,7 +14,6 @@ let isSudo = false;
 let isPasswordInput = false;
 let passwordCounter = 0;
 let bareMode = false;
-let showBash = true;
 
 //WRITELINESCOPY is used to during the "clear" command
 const WRITELINESCOPY = mutWriteLines;
@@ -464,11 +463,6 @@ const initEventListeners = () => {
   window.addEventListener("click", () => {
     USERINPUT.focus();
   });
-
-  console.log(
-    `%cPassword: ${command.password}`,
-    "color: red; font-size: 20px;"
-  );
 };
 
 initEventListeners();
@@ -490,5 +484,3 @@ function handleFileUpload(event: Event) {
 
 // Ensure the handleFileUpload function is available globally
 (window as any).handleFileUpload = handleFileUpload;
-
-console.log(showBash);
