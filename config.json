@@ -7,7 +7,7 @@
     "   ██║   ██║  ██╝╚██████╔╝███████║╚██████╔╝██║███████║██║╚██████╔╝██║ ╚████║",
     "   ╚═╝   ╚═════╝  ╚═════╝ ╚══════╝ ╚═════╝ ╚═╝╚══════╝╚═╝ ╚═════╝ ╚═╝  ╚═══╝"
   ],
-  "title": "truevision",
+  "title": "TrueVision",
   "username": "gpcssi",
   "hostname": "truevision",
   "password": "CIJRS",
@@ -43,7 +43,7 @@
       "linkedin": "ishaanagarwal78"
     }
   ],
-  "aboutGreeting": "Hi stranger. Welcome to truevision.",
+  "aboutGreeting": "Hi stranger! Welcome to TrueVision.",
   "colors": {
     "background": "#0C0623",
     "foreground": "#F8DDE5",

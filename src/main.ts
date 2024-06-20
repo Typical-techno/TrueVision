@@ -259,7 +259,7 @@ async function commandHandler(input: string) {
       break;
     case "banner":
       if (bareMode) {
-        writeLines(["truevision v1.0.0", "<br>"]);
+        writeLines(["TrueVisioin v1.0.0", "<br>"]);
         break;
       }
       writeLines(BANNER);
