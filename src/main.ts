@@ -184,67 +184,7 @@ async function commandHandler(input: string) {
     return;
   }
   if (input === "file") {
-    writeLines(file());
-    await new Promise((resolve) => setTimeout(resolve, 100)); // Delay to ensure DOM updates
-
-    const fileUpload = document.getElementById(
-      "file-upload"
-    ) as HTMLInputElement;
-    if (fileUpload) {
-      fileUpload.click();
-
-      // Wait for the file upload and log the file name
-      try {
-        const fileName = await new Promise<string>((resolve, reject) => {
-          fileUpload.addEventListener(
-            "change",
-            (event) => {
-              const name = handleFileUpload(event);
-              if (name) {
-                resolve(name);
-              } else {
-                reject(new Error("No file uploaded"));
-              }
-            },
-            { once: true }
-          );
-        });
-
-        // Print the file name and additional messages
-        writeLines([`Image uploaded: ${fileName}`, "<br>"]);
-
-        const processMessages = [
-          "Uploading image...",
-          "Analyzing image...",
-          "Retrieving AI models...",
-          "Loading deep learning frameworks...",
-          "Setting up neural networks...",
-          "Applying convolutional layers...",
-          "Detecting faces...",
-          "Extracting features...",
-          "Comparing with deepfake database...",
-          "Calculating confidence scores...",
-          "Generating heatmap...",
-          "Performing integrity checks...",
-          "Validating authenticity...",
-          "Finalizing analysis...",
-          "Image analysis complete.",
-          "Results: 85% confidence that this image is a deepfake.",
-        ];
-
-        let delay = 1000; // Start delay of 1 second
-
-        processMessages.forEach((message, index) => {
-          setTimeout(() => {
-            writeLines([message, "<br>"]);
-          }, delay * (index + 1));
-        });
-      } catch (error) {
-        console.error(error);
-        writeLines(["Error uploading file.", "<br>"]);
-      }
-    }
-
+    await handleFileCommand();
     return; // Ensure no further command processing occurs
   }
 
@@ -481,6 +421,81 @@ function handleFileUpload(event: Event) {
   }
   return "";
 }
+
+async function handleFileCommand() {
+  writeLines(file());
+  await new Promise((resolve) => setTimeout(resolve, 100)); // Delay to ensure DOM updates
+  const fileUpload = document.getElementById("file-upload") as HTMLInputElement;
+  if (fileUpload) {
+    fileUpload.click();
+
+    try {
+      const fileName = await new Promise<string>((resolve, reject) => {
+        fileUpload.addEventListener(
+          "change",
+          (event) => {
+            const name = handleFileUpload(event);
+            if (name) {
+              resolve(name);
+            } else {
+              reject(new Error("No file uploaded"));
+            }
+          },
+          { once: true }
+        );
+      });
+
+      writeLines([`Image uploaded: ${fileName}`, "<br>"]);
+
+      const processMessages = [
+        "Uploading Content...",
+        "Analyzing Content...",
+        "Retrieving AI models...",
+        "Loading deep learning frameworks...",
+        "Setting up neural networks...",
+        "Applying convolutional layers...",
+        "Detecting faces...",
+        "Comparing with deepfake database...",
+        "Generating heatmap...",
+        "Validating authenticity...",
+        "Finalizing analysis wait...",
+      ];
+
+      let delay = 1000; // Start delay of 1 second
+
+      processMessages.forEach((message, index) => {
+        setTimeout(() => {
+          writeLines([message, "<br>"]);
+        }, delay * (index + 1));
+      });
+
+      await new Promise((resolve) => setTimeout(resolve, delay * processMessages.length));
+
+    } catch (error) {
+      console.error(error);
+      writeLines(["Error uploading file.", "<br>"]);
+    }
+  }
+
+  await loadResultPage();
+}
+
+async function loadResultPage() {
+  let apiResult = false; // This will be determined by an API call in the future
+
+  let resultPage = apiResult ? "true.html" : "fake.html";
+  try {
+    const response = await fetch(resultPage);
+    if (!response.ok) {
+      throw new Error("Network response was not ok");
+    }
+    const html = await response.text();
+    document.documentElement.innerHTML = html;
+  } catch (error) {
+    console.error("Error loading the result page:", error);
+  }
+}
+
 
 // Ensure the handleFileUpload function is available globally
 (window as any).handleFileUpload = handleFileUpload;
