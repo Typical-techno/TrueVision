@@ -3,7 +3,8 @@ export const file = () => {
   file.push("<br>");
 
   file.push(
-    `<span class='command'>Are You Going to Upload a Deepfake? Sounds Intersting</span>`
+    `<span class='command'>Are You Going to Upload a Deepfake? Sounds Intersting</span>`,
+    `<span class='command'>If its taking much time try refreshing and then reuploading file</span>`
   );
 
   file.push("<br>");
