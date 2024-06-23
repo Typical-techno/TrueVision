@@ -456,7 +456,7 @@ async function handleFileCommand() {
     fileUpload.click();
     
     try {
-      const { responseData, fileName } = await new Promise<any>((resolve, reject) => {
+      const { responseData } = await new Promise<any>((resolve, reject) => {
         fileUpload.addEventListener(
           "change",
           async (event) => {
